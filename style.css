@@ -1,5 +1,6 @@
 /* ===========================
    THE LITTLE MAIDS — STYLESHEET
+   Rifle Paper Co. Botanical Redesign
    =========================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap');
@@ -7,14 +8,25 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --cream:    #FAF8F3;
-  --sand:     #F0EBE0;
-  --tan:      #C9B99A;
-  --dark:     #2B2421;
-  --accent:   #D97B6C;   /* warm coral — pops against cream */
-  --accent2:  #8FB8AD;   /* sage green — secondary accent */
-  --text:     #3D3530;
-  --light-text: #7A6E68;
+  /* Rifle Paper Co. Botanical Palette */
+  --cream:      #F5EBD6;
+  --sand:       #EDE0C4;
+  --brown:      #3D2B1F;
+  --green:      #5C7A5A;
+  --green-dark: #4A6B4A;
+  --red:        #D94B3D;
+  --coral:      #E07965;
+  --gold:       #D9A441;
+  --blue:       #A8B8D4;
+  --olive:      #6B7A3E;
+
+  /* Semantic aliases (backward compat) */
+  --tan:        #D9A441;
+  --dark:       #3D2B1F;
+  --accent:     #5C7A5A;
+  --accent2:    #5C7A5A;
+  --text:       #3D2B1F;
+  --light-text: #7A6A58;
 }
 
 body {
@@ -24,17 +36,17 @@ body {
   line-height: 1.7;
 }
 
-a { color: var(--accent); text-decoration: none; }
+a { color: var(--green); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 /* ---- HEADER ---- */
 header {
-  background: #fff;
+  background: var(--cream);
   border-bottom: 2px solid var(--sand);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+  box-shadow: 0 2px 12px rgba(61,43,31,.08);
 }
 header .inner {
   max-width: 1100px;
@@ -54,12 +66,12 @@ header .inner {
   height: 60px;
   object-fit: contain;
   border-radius: 50%;
-  border: 2px solid var(--sand);
+  border: 2px solid var(--olive);
 }
 #branding .brand-name {
   font-family: 'Playfair Display', serif;
   font-size: 1.4rem;
-  color: var(--dark);
+  color: var(--brown);
   line-height: 1.2;
 }
 #branding .brand-tagline {
@@ -68,29 +80,45 @@ header .inner {
   letter-spacing: .04em;
 }
 nav ul { list-style: none; display: flex; gap: 28px; align-items: center; }
-nav a { font-size: 0.9rem; font-weight: 600; color: var(--text); }
-nav a:hover { color: var(--accent); text-decoration: none; }
-nav a.active { color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
+nav a { font-size: 0.9rem; font-weight: 600; color: var(--brown); }
+nav a:hover { color: var(--green); text-decoration: none; }
+nav a.active { color: var(--green); border-bottom: 2px solid var(--green); padding-bottom: 2px; }
 nav a.btn-nav {
-  background: var(--accent);
+  background: var(--green);
   color: #fff;
   padding: 9px 20px;
   border-radius: 30px;
   font-weight: 600;
   transition: background .2s;
 }
-nav a.btn-nav:hover { background: #c4604e; text-decoration: none; }
+nav a.btn-nav:hover { background: var(--green-dark); text-decoration: none; }
+
+/* ---- LOGO HERO ---- */
+.logo-hero {
+  background: var(--cream);
+  padding: 54px 30px 36px;
+  text-align: center;
+  border-bottom: 2px solid var(--sand);
+}
+.logo-hero img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 4px solid var(--olive);
+  box-shadow: 0 4px 28px rgba(61,43,31,.18);
+}
 
 /* ---- HERO ---- */
 .hero {
   background: linear-gradient(135deg, var(--sand) 0%, var(--cream) 60%);
-  padding: 90px 30px 80px;
+  padding: 70px 30px 80px;
   text-align: center;
 }
 .hero h1 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2rem, 5vw, 3.4rem);
-  color: var(--dark);
+  color: var(--brown);
   max-width: 800px;
   margin: 0 auto 20px;
   line-height: 1.2;
@@ -103,23 +131,23 @@ nav a.btn-nav:hover { background: #c4604e; text-decoration: none; }
 }
 .btn {
   display: inline-block;
-  background: var(--accent);
+  background: var(--green);
   color: #fff;
   padding: 16px 38px;
   border-radius: 40px;
   font-weight: 600;
   font-size: 1rem;
   transition: background .2s, transform .15s;
-  box-shadow: 0 4px 14px rgba(217,123,108,.35);
+  box-shadow: 0 4px 14px rgba(92,122,90,.35);
 }
-.btn:hover { background: #c4604e; transform: translateY(-2px); text-decoration: none; }
+.btn:hover { background: var(--green-dark); transform: translateY(-2px); text-decoration: none; }
 .btn-outline {
   background: transparent;
-  border: 2px solid var(--accent);
-  color: var(--accent);
+  border: 2px solid var(--green);
+  color: var(--green);
   box-shadow: none;
 }
-.btn-outline:hover { background: var(--accent); color: #fff; }
+.btn-outline:hover { background: var(--green); color: #fff; }
 
 /* ---- SECTIONS ---- */
 section { padding: 70px 30px; }
@@ -128,14 +156,14 @@ section { padding: 70px 30px; }
   font-size: 0.8rem;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--green);
   font-weight: 600;
   margin-bottom: 8px;
 }
 .section-title {
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.6rem, 3.5vw, 2.6rem);
-  color: var(--dark);
+  color: var(--brown);
   margin-bottom: 16px;
   line-height: 1.25;
 }
@@ -146,7 +174,7 @@ section { padding: 70px 30px; }
   margin-bottom: 50px;
 }
 .bg-sand { background: var(--sand); }
-.bg-white { background: #fff; }
+.bg-white { background: #FFFDF7; }
 .text-center { text-align: center; }
 .text-center .section-subtitle { margin-left: auto; margin-right: auto; }
 
@@ -155,23 +183,23 @@ section { padding: 70px 30px; }
 .card-grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .card-grid-2 { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
 .card {
-  background: #fff;
+  background: #FFFDF7;
   border-radius: 16px;
   padding: 34px 30px;
-  box-shadow: 0 2px 16px rgba(0,0,0,.06);
+  box-shadow: 0 2px 16px rgba(61,43,31,.07);
   border: 1px solid var(--sand);
   transition: transform .2s, box-shadow .2s;
 }
-.card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,.1); }
-.card-icon { font-size: 2rem; margin-bottom: 14px; }
-.card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; margin-bottom: 10px; color: var(--dark); }
+.card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(61,43,31,.12); }
+.card-icon { margin-bottom: 14px; line-height: 1; }
+.card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; margin-bottom: 10px; color: var(--brown); }
 .card p { font-size: .95rem; color: var(--light-text); }
-.card .price { font-size: 1.4rem; font-weight: 700; color: var(--accent); margin: 14px 0 6px; }
+.card .price { font-size: 1.4rem; font-weight: 700; color: var(--green); margin: 14px 0 6px; }
 
 /* ---- TESTIMONIALS ---- */
-.testimonials { background: var(--dark); color: #fff; }
+.testimonials { background: var(--brown); color: #fff; }
 .testimonials .section-title { color: #fff; }
-.testimonials .section-label { color: var(--tan); }
+.testimonials .section-label { color: var(--gold); }
 .testimonial-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .testimonial {
   background: rgba(255,255,255,.07);
@@ -180,44 +208,44 @@ section { padding: 70px 30px; }
   border: 1px solid rgba(255,255,255,.1);
 }
 .testimonial p { font-size: .95rem; color: rgba(255,255,255,.85); margin-bottom: 16px; font-style: italic; }
-.testimonial .author { font-weight: 600; color: var(--tan); font-size: .9rem; }
-.stars { color: #FFD166; font-size: 1rem; margin-bottom: 10px; }
+.testimonial .author { font-weight: 600; color: var(--gold); font-size: .9rem; }
+.stars { color: var(--gold); font-size: 1rem; margin-bottom: 10px; }
 
 /* ---- PROCESS ---- */
 .steps { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); counter-reset: step; }
 .step { text-align: center; padding: 10px; }
 .step-num {
   width: 52px; height: 52px; border-radius: 50%;
-  background: var(--accent); color: #fff;
+  background: var(--green); color: #fff;
   font-family: 'Playfair Display', serif;
   font-size: 1.3rem;
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 16px;
 }
-.step h4 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; color: var(--dark); }
+.step h4 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; color: var(--brown); }
 .step p { font-size: .9rem; color: var(--light-text); }
 
-/* ---- BOOKING PLACEHOLDER ---- */
+/* ---- BOOKING ---- */
 .booking-widget {
-  background: #fff;
-  border: 2px dashed var(--tan);
+  background: #FFFDF7;
+  border: 2px dashed var(--sand);
   border-radius: 16px;
   padding: 70px 40px;
   text-align: center;
   color: var(--light-text);
 }
-.booking-widget .widget-icon { font-size: 3rem; margin-bottom: 16px; }
-.booking-widget h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--dark); margin-bottom: 10px; }
+.booking-widget .widget-icon { margin-bottom: 16px; }
+.booking-widget h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--brown); margin-bottom: 10px; }
 
 /* ---- FAQ ---- */
 .faq-list { max-width: 720px; margin: 0 auto; }
 .faq-item { border-bottom: 1px solid var(--sand); padding: 20px 0; }
-.faq-item h4 { font-size: 1rem; font-weight: 600; color: var(--dark); margin-bottom: 8px; }
+.faq-item h4 { font-size: 1rem; font-weight: 600; color: var(--brown); margin-bottom: 8px; }
 .faq-item p { font-size: .95rem; color: var(--light-text); }
 
 /* ---- PROMISE BANNER ---- */
 .promise-banner {
-  background: var(--accent2);
+  background: var(--green);
   color: #fff;
   text-align: center;
   padding: 50px 30px;
@@ -227,13 +255,13 @@ section { padding: 70px 30px; }
 
 /* ---- FOOTER ---- */
 footer {
-  background: var(--dark);
+  background: var(--brown);
   color: rgba(255,255,255,.65);
   text-align: center;
   padding: 40px 30px;
   font-size: .88rem;
 }
-footer a { color: var(--tan); }
+footer a { color: var(--gold); }
 footer strong { color: #fff; }
 
 /* ---- PAGE HEADER ---- */
@@ -242,27 +270,30 @@ footer strong { color: #fff; }
   padding: 60px 30px 50px;
   text-align: center;
 }
-.page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--dark); margin-bottom: 12px; }
+.page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--brown); margin-bottom: 12px; }
 .page-header p { color: var(--light-text); font-size: 1.05rem; max-width: 560px; margin: 0 auto; }
 
 /* ---- SERVICES PAGE ---- */
 .service-block { display: grid; gap: 30px; margin-bottom: 50px; }
 .service-card {
-  background: #fff;
+  background: #FFFDF7;
   border-radius: 16px;
   padding: 36px;
   border: 1px solid var(--sand);
-  box-shadow: 0 2px 12px rgba(0,0,0,.05);
+  box-shadow: 0 2px 12px rgba(61,43,31,.05);
 }
-.service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--dark); margin-bottom: 10px; }
+.service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--brown); margin-bottom: 10px; }
 .service-card p { color: var(--light-text); margin-bottom: 16px; }
 .service-card ul { list-style: none; display: grid; gap: 8px; }
 .service-card ul li { font-size: .95rem; color: var(--text); padding-left: 24px; position: relative; }
-.service-card ul li::before { content: '✨'; position: absolute; left: 0; }
+.service-card ul li::before { content: '→'; position: absolute; left: 0; color: var(--green); font-weight: 600; }
 
 /* ---- CONTACT ---- */
 .contact-grid { display: grid; gap: 30px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-.contact-item { background: #fff; border-radius: 14px; padding: 30px; border: 1px solid var(--sand); text-align: center; }
-.contact-item .icon { font-size: 2rem; margin-bottom: 12px; }
-.contact-item h4 { font-weight: 600; margin-bottom: 6px; color: var(--dark); }
+.contact-item { background: #FFFDF7; border-radius: 14px; padding: 30px; border: 1px solid var(--sand); text-align: center; }
+.contact-item .icon { margin-bottom: 12px; line-height: 1; }
+.contact-item h4 { font-weight: 600; margin-bottom: 6px; color: var(--brown); }
 .contact-item p { font-size: .95rem; color: var(--light-text); }
+
+/* ---- BOTANICAL DIVIDER ---- */
+.botanical-divider { text-align: center; margin: 30px 0; }
