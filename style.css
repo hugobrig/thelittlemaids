@@ -313,8 +313,8 @@ body {
 }
 
 /* ---- BOTANICAL DIVIDERS — BIGGER & SCALED ---- */
-.botanical-divider { text-align: center; margin: 36px 0; }
-.botanical-divider svg { width: 600px; max-width: 100%; height: auto; }
+.botanical-divider { text-align: center; margin: 40px 0; }
+.botanical-divider svg { width: 600px; max-width: 100%; height: auto; display: block; margin: 0 auto; }
 
 /* ---- HERO — FLORAL VINE AT BOTTOM ---- */
 .hero {
