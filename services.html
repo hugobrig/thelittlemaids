@@ -17,7 +17,10 @@
         <div class="brand-tagline">Utah's Favorite Cleaning Crew</div>
       </div>
     </div>
-    <nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="mainNav">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html" class="active">Services</a></li>
@@ -191,5 +194,19 @@
   <p style="margin-top:14px;">© 2026 The Little Maids. All rights reserved. (Yes, even the sparkles.)</p>
 </footer>
 
+<script>
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('mainNav');
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open);
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', false);
+  }));
+</script>
 </body>
 </html>

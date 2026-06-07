@@ -297,3 +297,126 @@ footer strong { color: #fff; }
 
 /* ---- BOTANICAL DIVIDER ---- */
 .botanical-divider { text-align: center; margin: 30px 0; }
+
+/* ============================
+   MOBILE / RESPONSIVE
+   ============================ */
+
+/* Hamburger button — hidden on desktop */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 200;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--brown);
+  border-radius: 2px;
+  transition: transform .25s, opacity .25s;
+}
+/* Animated X when open */
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  /* Header */
+  header .inner {
+    padding: 12px 20px;
+    position: relative;
+  }
+
+  /* Show hamburger */
+  .nav-toggle { display: flex; }
+
+  /* Nav drawer */
+  nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    border-top: 1px solid var(--sand);
+    box-shadow: 0 8px 24px rgba(61,43,31,.12);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+    z-index: 150;
+  }
+  nav.open { max-height: 400px; }
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 16px 20px 20px;
+  }
+  nav ul li { width: 100%; }
+  nav a {
+    display: block;
+    padding: 12px 0;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--sand);
+  }
+  nav a.btn-nav {
+    margin-top: 12px;
+    text-align: center;
+    padding: 12px 20px;
+    border-bottom: none;
+  }
+
+  /* Logo hero */
+  .logo-hero { padding: 32px 20px 24px; }
+  .logo-hero img { width: 140px; height: 140px; }
+
+  /* Hero */
+  .hero { padding: 48px 20px 56px; }
+  .hero p { font-size: 1rem; }
+  .btn { padding: 14px 28px; }
+
+  /* Sections */
+  section { padding: 48px 20px; }
+
+  /* Cards — single column */
+  .card-grid-3,
+  .card-grid-2 { grid-template-columns: 1fr; }
+  .card { padding: 26px 22px; }
+
+  /* Steps */
+  .steps { grid-template-columns: 1fr 1fr; }
+
+  /* Testimonials */
+  .testimonial-grid { grid-template-columns: 1fr; }
+
+  /* Promise banner */
+  .promise-banner { padding: 40px 20px; }
+  .promise-banner h2 { font-size: 1.5rem; }
+
+  /* Contact grid */
+  .contact-grid { grid-template-columns: 1fr; }
+
+  /* Service cards */
+  .service-card { padding: 26px 22px; }
+
+  /* Page headers */
+  .page-header { padding: 40px 20px 36px; }
+
+  /* Footer */
+  footer { padding: 32px 20px; }
+
+  /* Booking widget */
+  .booking-widget { padding: 40px 20px; }
+
+  /* FAQ */
+  .faq-list { padding: 0 4px; }
+}
+
+@media (max-width: 400px) {
+  .steps { grid-template-columns: 1fr; }
+  #branding .brand-name { font-size: 1.15rem; }
+}
