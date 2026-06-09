@@ -1,6 +1,6 @@
 /* ===========================
    THE LITTLE MAIDS — STYLESHEET
-   Rifle Paper Co. Botanical Redesign
+   Wil & Sadie Palette Redesign
    =========================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap');
@@ -8,25 +8,24 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  /* Rifle Paper Co. Botanical Palette */
-  --cream:      #F5EBD6;
-  --sand:       #EDE0C4;
-  --brown:      #3D2B1F;
-  --green:      #5C7A5A;
-  --green-dark: #4A6B4A;
-  --red:        #D94B3D;
-  --coral:      #E07965;
-  --gold:       #D9A441;
-  --blue:       #A8B8D4;
-  --olive:      #6B7A3E;
+  /* Wil & Sadie Palette */
+  --cream:      #FAF6EF;
+  --sand:       #EDE8DE;
+  --teal:       #5B8A8A;
+  --teal-dark:  #4A7272;
+  --mustard:    #C8A84B;
+  --black:      #1A1A1A;
+  --brown:      #7A5C3E;
+  --red:        #CC3322;
 
-  /* Semantic aliases (backward compat) */
-  --tan:        #D9A441;
-  --dark:       #3D2B1F;
-  --accent:     #5C7A5A;
-  --accent2:    #5C7A5A;
-  --text:       #3D2B1F;
-  --light-text: #7A6A58;
+  /* Semantic aliases */
+  --green:      #5B8A8A;
+  --green-dark: #4A7272;
+  --gold:       #C8A84B;
+  --dark:       #1A1A1A;
+  --accent:     #5B8A8A;
+  --text:       #1A1A1A;
+  --light-text: #7A5C3E;
 }
 
 body {
@@ -36,7 +35,7 @@ body {
   line-height: 1.7;
 }
 
-a { color: var(--green); text-decoration: none; }
+a { color: var(--teal); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 /* ---- HEADER ---- */
@@ -46,12 +45,12 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 12px rgba(61,43,31,.08);
+  box-shadow: 0 2px 12px rgba(26,26,26,.06);
 }
 header .inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 14px 30px;
+  padding: 12px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -62,52 +61,127 @@ header .inner {
   gap: 14px;
 }
 #branding img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  border-radius: 6px;
-  border: 2px solid var(--olive);
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--teal);
 }
 #branding .brand-name {
   font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  color: var(--brown);
+  font-size: 1.3rem;
+  color: var(--black);
   line-height: 1.2;
+  letter-spacing: .03em;
 }
 #branding .brand-tagline {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--light-text);
-  letter-spacing: .04em;
+  letter-spacing: .06em;
+  text-transform: uppercase;
 }
 nav ul { list-style: none; display: flex; gap: 28px; align-items: center; }
-nav a { font-size: 0.9rem; font-weight: 600; color: var(--brown); }
-nav a:hover { color: var(--green); text-decoration: none; }
-nav a.active { color: var(--green); border-bottom: 2px solid var(--green); padding-bottom: 2px; }
+nav a { font-size: 0.85rem; font-weight: 600; color: var(--black); letter-spacing: .06em; text-transform: uppercase; }
+nav a:hover { color: var(--teal); text-decoration: none; }
+nav a.active { color: var(--teal); border-bottom: 2px solid var(--teal); padding-bottom: 2px; }
 nav a.btn-nav {
-  background: var(--green);
+  background: var(--teal);
   color: #fff;
-  padding: 9px 20px;
+  padding: 9px 22px;
   border-radius: 30px;
   font-weight: 600;
   transition: background .2s;
+  text-transform: uppercase;
+  letter-spacing: .06em;
 }
-nav a.btn-nav:hover { background: var(--green-dark); text-decoration: none; }
+nav a.btn-nav:hover { background: var(--teal-dark); text-decoration: none; }
 
 /* ---- LOGO HERO ---- */
 .logo-hero {
   background: var(--cream);
   padding: 54px 30px 36px;
   text-align: center;
-  border-bottom: 2px solid var(--sand);
+}
+.logo-hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+/* Decorative vertical stripe columns flanking the logo */
+.logo-hero-stripes {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 14px;
+  height: 160px;
+  justify-content: center;
+}
+.logo-hero-stripes span {
+  display: block;
+  width: 6px;
+  border-radius: 3px;
+  margin: 0 auto;
+}
+.logo-hero-stripes span:nth-child(1) { background: var(--teal);   height: 40px; }
+.logo-hero-stripes span:nth-child(2) { background: var(--mustard); height: 28px; }
+.logo-hero-stripes span:nth-child(3) { background: var(--black);   height: 18px; }
+.logo-hero-stripes span:nth-child(4) { background: var(--brown);   height: 28px; }
+.logo-hero-stripes span:nth-child(5) { background: var(--teal);    height: 20px; }
+.logo-hero-stripes.right span:nth-child(1) { background: var(--mustard); }
+.logo-hero-stripes.right span:nth-child(2) { background: var(--teal); }
+.logo-hero-stripes.right span:nth-child(3) { background: var(--brown); }
+.logo-hero-stripes.right span:nth-child(4) { background: var(--black); }
+.logo-hero-stripes.right span:nth-child(5) { background: var(--mustard); }
+
+.logo-hero-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 30px;
 }
 .logo-hero img {
-  width: 200px;
-  height: 200px;
-  object-fit: contain;
-  border-radius: 12px;
-  border: 4px solid var(--olive);
-  box-shadow: 0 4px 28px rgba(61,43,31,.18);
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--teal);
+  box-shadow: 0 4px 28px rgba(91,138,138,.22);
 }
+.logo-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--black);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-top: 18px;
+}
+
+/* ---- STRIPE DIVIDER ---- */
+.stripe-divider {
+  width: 100%;
+  height: 36px;
+  display: flex;
+}
+.stripe-divider span {
+  display: block;
+  flex: 1;
+}
+/* Pattern: teal | mustard | cream | black | brown | teal | mustard | red-thin | cream | teal | black | mustard | brown | teal */
+.stripe-divider span:nth-child(1)  { background: var(--teal);   flex: 3; }
+.stripe-divider span:nth-child(2)  { background: var(--mustard); flex: 2; }
+.stripe-divider span:nth-child(3)  { background: var(--cream);  flex: 1.5; }
+.stripe-divider span:nth-child(4)  { background: var(--black);  flex: 1; }
+.stripe-divider span:nth-child(5)  { background: var(--brown);  flex: 2; }
+.stripe-divider span:nth-child(6)  { background: var(--teal);   flex: 2; }
+.stripe-divider span:nth-child(7)  { background: var(--mustard); flex: 1.5; }
+.stripe-divider span:nth-child(8)  { background: var(--red);    flex: 0.4; }
+.stripe-divider span:nth-child(9)  { background: var(--cream);  flex: 1.5; }
+.stripe-divider span:nth-child(10) { background: var(--teal);   flex: 2; }
+.stripe-divider span:nth-child(11) { background: var(--black);  flex: 1; }
+.stripe-divider span:nth-child(12) { background: var(--mustard); flex: 2; }
+.stripe-divider span:nth-child(13) { background: var(--brown);  flex: 2; }
+.stripe-divider span:nth-child(14) { background: var(--teal);   flex: 3; }
 
 /* ---- HERO ---- */
 .hero {
@@ -118,7 +192,7 @@ nav a.btn-nav:hover { background: var(--green-dark); text-decoration: none; }
 .hero h1 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2rem, 5vw, 3.4rem);
-  color: var(--brown);
+  color: var(--black);
   max-width: 800px;
   margin: 0 auto 20px;
   line-height: 1.2;
@@ -131,23 +205,23 @@ nav a.btn-nav:hover { background: var(--green-dark); text-decoration: none; }
 }
 .btn {
   display: inline-block;
-  background: var(--green);
+  background: var(--teal);
   color: #fff;
   padding: 16px 38px;
   border-radius: 40px;
   font-weight: 600;
   font-size: 1rem;
   transition: background .2s, transform .15s;
-  box-shadow: 0 4px 14px rgba(92,122,90,.35);
+  box-shadow: 0 4px 14px rgba(91,138,138,.3);
 }
-.btn:hover { background: var(--green-dark); transform: translateY(-2px); text-decoration: none; }
+.btn:hover { background: var(--teal-dark); transform: translateY(-2px); text-decoration: none; }
 .btn-outline {
   background: transparent;
-  border: 2px solid var(--green);
-  color: var(--green);
+  border: 2px solid var(--teal);
+  color: var(--teal);
   box-shadow: none;
 }
-.btn-outline:hover { background: var(--green); color: #fff; }
+.btn-outline:hover { background: var(--teal); color: #fff; }
 
 /* ---- SECTIONS ---- */
 section { padding: 70px 30px; }
@@ -156,14 +230,14 @@ section { padding: 70px 30px; }
   font-size: 0.8rem;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--green);
+  color: var(--teal);
   font-weight: 600;
   margin-bottom: 8px;
 }
 .section-title {
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.6rem, 3.5vw, 2.6rem);
-  color: var(--brown);
+  color: var(--black);
   margin-bottom: 16px;
   line-height: 1.25;
 }
@@ -186,43 +260,43 @@ section { padding: 70px 30px; }
   background: #FFFDF7;
   border-radius: 16px;
   padding: 34px 30px;
-  box-shadow: 0 2px 16px rgba(61,43,31,.07);
+  box-shadow: 0 2px 16px rgba(26,26,26,.06);
   border: 1px solid var(--sand);
   transition: transform .2s, box-shadow .2s;
 }
-.card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(61,43,31,.12); }
+.card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(91,138,138,.15); }
 .card-icon { margin-bottom: 14px; line-height: 1; }
-.card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; margin-bottom: 10px; color: var(--brown); }
+.card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; margin-bottom: 10px; color: var(--black); }
 .card p { font-size: .95rem; color: var(--light-text); }
-.card .price { font-size: 1.4rem; font-weight: 700; color: var(--green); margin: 14px 0 6px; }
+.card .price { font-size: 1.4rem; font-weight: 700; color: var(--mustard); margin: 14px 0 6px; }
 
 /* ---- TESTIMONIALS ---- */
-.testimonials { background: var(--brown); color: #fff; }
+.testimonials { background: var(--black); color: #fff; }
 .testimonials .section-title { color: #fff; }
-.testimonials .section-label { color: var(--gold); }
+.testimonials .section-label { color: var(--mustard); }
 .testimonial-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .testimonial {
-  background: rgba(255,255,255,.07);
+  background: rgba(255,255,255,.06);
   border-radius: 14px;
   padding: 28px;
   border: 1px solid rgba(255,255,255,.1);
 }
 .testimonial p { font-size: .95rem; color: rgba(255,255,255,.85); margin-bottom: 16px; font-style: italic; }
-.testimonial .author { font-weight: 600; color: var(--gold); font-size: .9rem; }
-.stars { color: var(--gold); font-size: 1rem; margin-bottom: 10px; }
+.testimonial .author { font-weight: 600; color: var(--mustard); font-size: .9rem; }
+.stars { color: var(--mustard); font-size: 1rem; margin-bottom: 10px; }
 
 /* ---- PROCESS ---- */
 .steps { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); counter-reset: step; }
 .step { text-align: center; padding: 10px; }
 .step-num {
   width: 52px; height: 52px; border-radius: 50%;
-  background: var(--green); color: #fff;
+  background: var(--teal); color: #fff;
   font-family: 'Playfair Display', serif;
   font-size: 1.3rem;
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 16px;
 }
-.step h4 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; color: var(--brown); }
+.step h4 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; color: var(--black); }
 .step p { font-size: .9rem; color: var(--light-text); }
 
 /* ---- BOOKING ---- */
@@ -235,17 +309,17 @@ section { padding: 70px 30px; }
   color: var(--light-text);
 }
 .booking-widget .widget-icon { margin-bottom: 16px; }
-.booking-widget h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--brown); margin-bottom: 10px; }
+.booking-widget h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--black); margin-bottom: 10px; }
 
 /* ---- FAQ ---- */
 .faq-list { max-width: 720px; margin: 0 auto; }
 .faq-item { border-bottom: 1px solid var(--sand); padding: 20px 0; }
-.faq-item h4 { font-size: 1rem; font-weight: 600; color: var(--brown); margin-bottom: 8px; }
+.faq-item h4 { font-size: 1rem; font-weight: 600; color: var(--black); margin-bottom: 8px; }
 .faq-item p { font-size: .95rem; color: var(--light-text); }
 
 /* ---- PROMISE BANNER ---- */
 .promise-banner {
-  background: var(--green);
+  background: var(--teal);
   color: #fff;
   text-align: center;
   padding: 50px 30px;
@@ -255,13 +329,13 @@ section { padding: 70px 30px; }
 
 /* ---- FOOTER ---- */
 footer {
-  background: var(--brown);
-  color: rgba(255,255,255,.65);
+  background: var(--black);
+  color: rgba(255,255,255,.6);
   text-align: center;
   padding: 40px 30px;
   font-size: .88rem;
 }
-footer a { color: var(--gold); }
+footer a { color: var(--mustard); }
 footer strong { color: #fff; }
 
 /* ---- PAGE HEADER ---- */
@@ -270,7 +344,7 @@ footer strong { color: #fff; }
   padding: 60px 30px 50px;
   text-align: center;
 }
-.page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--brown); margin-bottom: 12px; }
+.page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--black); margin-bottom: 12px; }
 .page-header p { color: var(--light-text); font-size: 1.05rem; max-width: 560px; margin: 0 auto; }
 
 /* ---- SERVICES PAGE ---- */
@@ -280,95 +354,23 @@ footer strong { color: #fff; }
   border-radius: 16px;
   padding: 36px;
   border: 1px solid var(--sand);
-  box-shadow: 0 2px 12px rgba(61,43,31,.05);
+  box-shadow: 0 2px 12px rgba(26,26,26,.04);
 }
-.service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--brown); margin-bottom: 10px; }
+.service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--black); margin-bottom: 10px; }
 .service-card p { color: var(--light-text); margin-bottom: 16px; }
 .service-card ul { list-style: none; display: grid; gap: 8px; }
 .service-card ul li { font-size: .95rem; color: var(--text); padding-left: 24px; position: relative; }
-.service-card ul li::before { content: '→'; position: absolute; left: 0; color: var(--green); font-weight: 600; }
+.service-card ul li::before { content: '→'; position: absolute; left: 0; color: var(--teal); font-weight: 600; }
 
 /* ---- CONTACT ---- */
 .contact-grid { display: grid; gap: 30px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .contact-item { background: #FFFDF7; border-radius: 14px; padding: 30px; border: 1px solid var(--sand); text-align: center; }
 .contact-item .icon { margin-bottom: 12px; line-height: 1; }
-.contact-item h4 { font-weight: 600; margin-bottom: 6px; color: var(--brown); }
+.contact-item h4 { font-weight: 600; margin-bottom: 6px; color: var(--black); }
 .contact-item p { font-size: .95rem; color: var(--light-text); }
 
-/* ---- BOTANICAL DIVIDER ---- */
-.botanical-divider { text-align: center; margin: 30px 0; }
-
-/* ===========================
-   FLORAL ENHANCEMENT ADDITIONS
-   More cutesy & botanical — Rifle Paper Co. vibes
-   =========================== */
-
-/* ---- BODY BACKGROUND FLORAL PATTERN ---- */
-body {
-  background-image:
-    radial-gradient(circle, rgba(185,160,110,0.13) 1.5px, transparent 1.5px),
-    radial-gradient(circle, rgba(140,175,130,0.10) 1px, transparent 1px);
-  background-size: 80px 80px, 40px 40px;
-  background-position: 0 0, 20px 20px;
-}
-
-/* ---- BOTANICAL DIVIDERS — BIGGER & SCALED ---- */
-.botanical-divider { text-align: center; margin: 40px 0; }
-.botanical-divider svg { width: 600px; max-width: 100%; height: auto; display: block; margin: 0 auto; }
-
-/* ---- HERO — FLORAL VINE AT BOTTOM ---- */
-.hero {
-  position: relative;
-}
-.hero::after {
-  content: '';
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 36px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='36' viewBox='0 0 120 36'%3E%3Cpath d='M0 28 Q15 14 30 24 Q45 34 60 20 Q75 6 90 18 Q105 30 120 22' stroke='%235C7A5A' stroke-width='1.5' fill='none' stroke-opacity='0.45'/%3E%3Ccircle cx='30' cy='23' r='2.5' fill='%23D94B3D' fill-opacity='0.55'/%3E%3Ccircle cx='60' cy='19' r='2' fill='%23D9A441' fill-opacity='0.6'/%3E%3Ccircle cx='90' cy='17' r='2.5' fill='%23D94B3D' fill-opacity='0.55'/%3E%3Cpath d='M15 26 Q18 18 24 22' stroke='%235C7A5A' stroke-width='1' fill='%235C7A5A' fill-opacity='0.2' stroke-opacity='0.5'/%3E%3Cpath d='M75 14 Q78 6 84 10' stroke='%235C7A5A' stroke-width='1' fill='%235C7A5A' fill-opacity='0.2' stroke-opacity='0.5'/%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-position: bottom;
-  pointer-events: none;
-  opacity: 0.9;
-}
-
-/* ---- CARDS — FLORAL WATERMARK ACCENT ---- */
-.card {
-  position: relative;
-  overflow: hidden;
-}
-.card::before {
-  content: '';
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  width: 64px;
-  height: 64px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Ccircle cx='48' cy='16' r='4' fill='%235C7A5A' fill-opacity='0.12'/%3E%3Cellipse cx='48' cy='8' rx='2.5' ry='5' fill='%235C7A5A' fill-opacity='0.10'/%3E%3Cellipse cx='56' cy='16' rx='5' ry='2.5' fill='%235C7A5A' fill-opacity='0.10'/%3E%3Cellipse cx='40' cy='16' rx='5' ry='2.5' fill='%235C7A5A' fill-opacity='0.10'/%3E%3Cellipse cx='48' cy='24' rx='2.5' ry='5' fill='%235C7A5A' fill-opacity='0.10'/%3E%3Cpath d='M36 36 Q40 26 50 30' stroke='%235C7A5A' stroke-width='1' fill='%235C7A5A' fill-opacity='0.08' stroke-opacity='0.2'/%3E%3Ccircle cx='50' cy='30' r='2' fill='%23D9A441' fill-opacity='0.15'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  pointer-events: none;
-  z-index: 0;
-}
-.card > * { position: relative; z-index: 1; }
-
-/* ---- SECTION TITLE FLORAL SPRIG — homepage use ---- */
-.section-title-floral {
-  position: relative;
-  padding-top: 36px;
-}
-.section-title-floral::before {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 28px;
-  margin: 0 auto 6px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='28' viewBox='0 0 60 28'%3E%3Cpath d='M30 26 Q30 14 30 8' stroke='%235C7A5A' stroke-width='1.2' stroke-linecap='round'/%3E%3Cpath d='M30 16 Q22 10 16 14' stroke='%235C7A5A' stroke-width='1.2' fill='%235C7A5A' fill-opacity='0.25' stroke-linecap='round'/%3E%3Cpath d='M30 16 Q38 10 44 14' stroke='%235C7A5A' stroke-width='1.2' fill='%235C7A5A' fill-opacity='0.25' stroke-linecap='round'/%3E%3Cpath d='M30 12 Q24 6 20 8' stroke='%235C7A5A' stroke-width='1' fill='%235C7A5A' fill-opacity='0.2' stroke-linecap='round'/%3E%3Cpath d='M30 12 Q36 6 40 8' stroke='%235C7A5A' stroke-width='1' fill='%235C7A5A' fill-opacity='0.2' stroke-linecap='round'/%3E%3Ccircle cx='30' cy='7' r='3' fill='%23D94B3D' fill-opacity='0.7'/%3E%3Ccircle cx='18' cy='13' r='2' fill='%23D9A441' fill-opacity='0.65'/%3E%3Ccircle cx='42' cy='13' r='2' fill='%23D9A441' fill-opacity='0.65'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: center;
-}
+/* ---- BOTANICAL DIVIDER (hide old SVG ones gracefully) ---- */
+.botanical-divider { display: none; }
 
 /* ============================
    MOBILE / RESPONSIVE
@@ -389,7 +391,7 @@ body {
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--brown);
+  background: var(--black);
   border-radius: 2px;
   transition: transform .25s, opacity .25s;
 }
@@ -416,7 +418,7 @@ body {
     right: 0;
     background: var(--cream);
     border-top: 1px solid var(--sand);
-    box-shadow: 0 8px 24px rgba(61,43,31,.12);
+    box-shadow: 0 8px 24px rgba(26,26,26,.1);
     max-height: 0;
     overflow: hidden;
     transition: max-height .3s ease;
@@ -444,7 +446,12 @@ body {
 
   /* Logo hero */
   .logo-hero { padding: 32px 20px 24px; }
-  .logo-hero img { width: 140px; height: 140px; }
+  .logo-hero img { width: 130px; height: 130px; }
+  .logo-hero-stripes { height: 120px; }
+  .logo-hero-title { font-size: 1.2rem; }
+
+  /* Stripe divider */
+  .stripe-divider { height: 28px; }
 
   /* Hero */
   .hero { padding: 48px 20px 56px; }
@@ -490,5 +497,6 @@ body {
 
 @media (max-width: 400px) {
   .steps { grid-template-columns: 1fr; }
-  #branding .brand-name { font-size: 1.15rem; }
+  #branding .brand-name { font-size: 1.1rem; }
+  .logo-hero-stripes { display: none; }
 }
