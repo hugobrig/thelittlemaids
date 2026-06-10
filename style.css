@@ -64,7 +64,7 @@ header .inner {
   width: 52px;
   height: 52px;
   object-fit: cover;
-
+  /* Removed border-radius and border as logo is transparent */
 }
 #branding .brand-name {
   font-family: 'Playfair Display', serif;
@@ -100,7 +100,7 @@ nav a.btn-nav:hover { background: var(--coral-red); text-decoration: none; }
    =========================== */
 .logo-hero {
   background: var(--cream);
-  padding: 0 30px;
+  padding: 0;
   text-align: center;
   /* Remove top/bottom padding so stripes can fill full height */
 }
@@ -118,6 +118,7 @@ nav a.btn-nav:hover { background: var(--coral-red); text-decoration: none; }
   gap: 8px;               /* gap === stripe width → exact 1:1 ratio */
   width: 72px;            /* 5 stripes × 8px + 4 gaps × 8px = 72px */
   align-self: stretch;    /* span full height of .logo-hero-inner */
+  height: 100%;
 }
 .logo-hero-stripes span {
   display: block;
@@ -135,7 +136,8 @@ nav a.btn-nav:hover { background: var(--coral-red); text-decoration: none; }
 .logo-hero img {
   width: 180px;
   height: 180px;
-  object-fit: cover;
+  object-fit: contain;
+  /* Removed background-color as logo is transparent */
 
   box-shadow: 0 4px 28px rgba(168,181,181,.25);
 }
@@ -275,7 +277,8 @@ section { padding: 70px 30px; }
 /* ===========================
    TESTIMONIALS
    =========================== */
-.testimonials { background: var(--charcoal); color: #fff; }
+.testimonials { background: var(--charcoal);
+  color: #fff; }
 .testimonials .section-title { color: #fff; }
 .testimonials .section-label { color: var(--tan-brown); }
 .testimonial-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
@@ -386,7 +389,11 @@ footer strong { color: #fff; }
    CONTACT
    =========================== */
 .contact-grid { display: grid; gap: 30px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-.contact-item { background: var(--cream); border-radius: 14px; padding: 30px; border: 1px solid var(--bg); text-align: center; }
+.contact-item { background: var(--cream);
+  border-radius: 14px;
+  padding: 30px;
+  border: 1px solid var(--bg);
+  text-align: center; }
 .contact-item .icon { margin-bottom: 12px; line-height: 1; }
 .contact-item h4 { font-weight: 600; margin-bottom: 6px; color: var(--charcoal); }
 .contact-item p { font-size: .95rem; color: var(--rust); }
@@ -442,7 +449,7 @@ footer strong { color: #fff; }
   nav a { display: block; padding: 12px 0; font-size: 1rem; border-bottom: 1px solid var(--bg); }
   nav a.btn-nav { margin-top: 12px; text-align: center; padding: 12px 20px; border-bottom: none; }
 
-  .logo-hero { padding: 0 20px; }
+  .logo-hero { padding: 0; }
   .logo-hero-inner { min-height: 220px; }
   .logo-hero img { width: 130px; height: 130px; }
   .logo-hero-stripes { gap: 6px; width: 54px; } /* 5×6 + 4×6 = 54px — 1:1 ratio on mobile */
