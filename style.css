@@ -99,42 +99,44 @@ nav a.btn-nav:hover { background: var(--coral-red); text-decoration: none; }
    LOGO HERO
    =========================== */
 .logo-hero {
+  position: relative;
   background: var(--cream);
-  padding: 0;
+  padding: 36px 0;
   text-align: center;
-  /* Remove top/bottom padding so stripes can fill full height */
 }
 .logo-hero-inner {
   display: flex;
-  align-items: stretch;   /* children stretch to full row height */
+  align-items: center;
   justify-content: center;
   gap: 0;
-  min-height: 290px;      /* full visible hero height */
 }
-/* Paired vertical sage-blue stripes flanking the logo */
+/* Paired vertical sage-blue stripes flanking the logo — absolutely positioned */
 .logo-hero-stripes {
+  position: absolute;
+  top: 0;
+  bottom: 0;
   display: flex;
   flex-direction: row;
-  gap: 8px;               /* gap === stripe width → exact 1:1 ratio */
-  width: 72px;            /* 5 stripes × 8px + 4 gaps × 8px = 72px */
-  align-self: stretch;    /* span full height of .logo-hero-inner */
-  height: 100%;
+  gap: 10px;
+  width: 100px;
+  padding: 0;
 }
+.logo-hero-stripes.left  { left: 0; }
+.logo-hero-stripes.right { right: 0; }
 .logo-hero-stripes span {
   display: block;
-  flex: 1;                /* each span = (72 - 4×8) / 5 = 8px = gap → 1:1 */
+  flex: 1;
   background: var(--sage-blue);
-  /* no border-radius — full-length clean stripes */
 }
 .logo-hero-center {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 54px 30px 36px;
+  padding: 0 30px;
 }
 .logo-hero img {
-  width: 240px;
+  width: 320px;
   height: auto;
   object-fit: contain;
   display: block;
@@ -448,11 +450,10 @@ footer strong { color: #fff; }
   nav a { display: block; padding: 12px 0; font-size: 1rem; border-bottom: 1px solid var(--bg); }
   nav a.btn-nav { margin-top: 12px; text-align: center; padding: 12px 20px; border-bottom: none; }
 
-  .logo-hero { padding: 0; }
-  .logo-hero-inner { min-height: 220px; }
-  .logo-hero img { width: 160px; height: auto; }
-  .logo-hero-stripes { gap: 6px; width: 54px; } /* 5×6 + 4×6 = 54px — 1:1 ratio on mobile */
-  .logo-hero-center { padding: 32px 20px 24px; }
+  .logo-hero { padding: 24px 0; }
+  .logo-hero img { width: 220px; height: auto; }
+  .logo-hero-stripes { width: 60px; gap: 8px; }
+  .logo-hero-center { padding: 0 20px; }
   .logo-hero-title { font-size: 1.2rem; }
 
   .stripe-divider { height: 30px; }
