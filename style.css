@@ -61,12 +61,11 @@ header .inner {
   gap: 14px;
 }
 #branding img {
-  width: 130px;
-  height: 130px;
+  width: 160px;
+  height: 160px;
   object-fit: cover;
   object-position: center;
-  margin: -39px 0;
-  /* Compensate for off-center canvas; scale 52px → 130px (~2.5x) */
+  margin: 0;
 }
 #branding .brand-name {
   font-family: 'Playfair Display', serif;
@@ -125,17 +124,18 @@ nav a.btn-nav:hover { background: var(--coral-red); text-decoration: none; }
   z-index: 1;
 }
 .logo-hero img {
-  width: 540px;
-  height: 540px;
+  width: 600px;
+  height: 600px;
   object-fit: cover;
   object-position: center;
   display: block;
-  margin: 0 auto 30px;
-  /* Scale 220px → 540px (~2.45x); compensate off-center canvas with object-position */
+  margin: 0 auto 12px;
+  background: var(--cream);
+  border-radius: 50%;
 }
 .logo-hero-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(1.4rem, 3.5vw, 2.4rem);
   color: var(--charcoal);
   letter-spacing: .15em;
   text-transform: uppercase;
