@@ -124,14 +124,15 @@ nav a.btn-nav:hover { background: var(--coral-red); text-decoration: none; }
   z-index: 1;
 }
 .logo-hero img {
-  width: 600px;
-  height: 600px;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
   object-position: center;
   display: block;
   margin: 0 auto 12px;
   background: var(--cream);
   border-radius: 50%;
+  padding: 6px;
 }
 .logo-hero-title {
   font-family: 'Playfair Display', serif;
@@ -446,7 +447,7 @@ footer strong { color: #fff; }
   nav a { display: block; padding: 12px 0; font-size: 1rem; border-bottom: 1px solid var(--bg); }
   nav a.btn-nav { margin-top: 12px; text-align: center; padding: 12px 20px; border-bottom: none; }
 
-  .logo-hero img { width: 360px; height: 360px; margin: 0 auto 24px; }
+  .logo-hero img { width: 220px; height: 220px; margin: 0 auto 10px; }
   .logo-hero { padding: 30px 0 36px; }
 
   .stripe-divider { height: 30px; }
